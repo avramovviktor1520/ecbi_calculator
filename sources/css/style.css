@@ -1,0 +1,383 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;600;700");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+body {
+  /* background: #dbeafe; */
+  background: #eff6ff;
+}
+:root {
+  --main-clr: #2563eb;
+  --dark-main-clr: #082f49;
+  --light-main-clr: #eff6ff;
+  --black-clr: #000;
+  --white-clr: #fff;
+}
+
+input[type="radio"] {
+  appearance: auto;
+  align-self: flex-start;
+  margin-bottom: 1rem;
+}
+
+input,
+select {
+  appearance: none;
+  border: 1px solid rgb(221, 221, 221);
+  font-size: 1.6rem;
+  padding: 0.5rem 0.2rem;
+  outline: none;
+}
+
+a:link,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.btn,
+.btn:visited {
+  font-size: 1.6rem;
+  padding: 0.8rem 1rem;
+  background: var(--main-clr);
+  transition: ease 0.3s;
+  border: 0.2rem solid var(--main-clr);
+  color: white;
+}
+
+.btn-ghost,
+.btn-ghost:visited {
+  background: transparent;
+  border: 0.2rem solid var(--main-clr);
+  color: var(--white-clr);
+}
+.btn:hover {
+  border: 0.2rem solid var(--white-clr);
+  color: var(--black-clr);
+  background: var(--white-clr);
+}
+
+@media screen and (max-width: 867px) {
+  .btn {
+    font-size: 1.4rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+}
+
+@media screen and (max-width: 600px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+
+.hero {
+  min-height: 600px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
+    url("../img/hero-1.jpg");
+  background-size: cover;
+  background-position: center;
+  font-size: 2rem;
+  /* clip-path: polygon(50% 0%, 100% 0, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 0 0); */
+  /* width: 100%; */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navigation {
+  position: relative;
+  /* color: black; */
+  background: var(--white-clr);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  transition: ease 0.3s;
+}
+.navigation:hover {
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+}
+.navigation-title {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+  color: var(--black-clr);
+  padding: 2rem 0 2rem 1rem;
+}
+
+.navigation-title img {
+  width: auto;
+  height: 2.4rem;
+  color: white;
+}
+
+.navigation-title h3 {
+  font-weight: 300;
+}
+
+.navigation-wrapper {
+  position: relative;
+  background: var(--main-clr);
+  font-size: 1.6rem;
+  max-width: 600px;
+  width: 100%;
+  /* max-height: 80%; */
+  margin-top: auto;
+  margin-left: auto;
+  display: flex;
+}
+
+.navigation-wrapper::before {
+  position: absolute;
+  display: table;
+  width: 100px;
+  height: 100%;
+  background: var(--main-clr);
+  content: "";
+  top: 0;
+  left: -99px;
+  clip-path: polygon(42% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.navigation-wrapper a {
+  display: flex;
+  align-items: center;
+  padding: 1rem 3rem;
+  transition: ease 0.3s;
+}
+
+.navigation-wrapper a:hover {
+  background: white;
+  color: #000;
+}
+
+.navigation-responsive-button {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .navigation-wrapper {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 998px) {
+  .navigation {
+    grid-template-rows: 1fr 1fr;
+    display: block;
+  }
+
+  .navigation-title {
+    padding: 0.8rem 0;
+    justify-content: center;
+  }
+
+  .navigation-wrapper::before {
+    display: none;
+  }
+  .navigation-wrapper {
+    justify-content: center;
+    font-size: 1.4rem;
+    max-width: 100%;
+    width: 100vw;
+    margin: 0;
+  }
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 180px;
+  margin-left: 100px;
+}
+
+.hero-text small {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  word-spacing: 1px;
+  color: #60a5fa;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  color: var(--light-main-clr);
+  line-height: 1;
+}
+
+.hero-button {
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 867px) {
+  .hero-text {
+    text-align: center;
+    margin-left: 0;
+    gap: 0.5rem;
+  }
+
+  .hero-text br {
+    display: none;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .hero-button {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero-text {
+    text-align: left;
+    margin-left: 2.5rem;
+    margin-top: 200px;
+  }
+  .hero-button {
+    margin-top: 1rem;
+    justify-content: flex-start;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  .navigation-wrapper {
+    display: none;
+  }
+
+  .navigation-title {
+    padding: 1.5rem 0;
+    font-size: 1.6rem;
+    justify-content: flex-start;
+  }
+  .navigation-title img {
+    display: none;
+  }
+
+  .navigation-responsive-button {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--main-clr);
+  }
+}
+
+#calculator {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3rem;
+}
+.form-calculator {
+  font-size: 1.6rem;
+}
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+.form-submit {
+  display: flex;
+  justify-content: center;
+}
+
+.form-submit a {
+  max-width: auto;
+}
+
+.form-group {
+  padding: 1rem 0;
+}
+.form-group h3 {
+  margin-bottom: 2rem;
+}
+
+.form-check {
+  font-size: 1.4rem;
+  font-weight: lighter;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.form-check input {
+  margin-top: 1rem;
+}
+
+.index {
+  /* margin-top: 4rem; */
+  font-size: 1.6rem;
+  /* margin-bottom: 6rem; */
+}
+
+.index div {
+  font-size: 2rem;
+  color: white;
+  margin-top: 1.8rem;
+  display: block;
+  max-width: auto;
+  text-align: center;
+  padding: 1rem 2rem;
+  background: var(--main-clr);
+}
+.index h3 {
+  max-width: 600px;
+}
+.chart {
+  margin-top: 6rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1060px) {
+  #calculator {
+    display: block;
+  }
+
+  .calculator-result {
+    padding: 4rem 0;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .form-group .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .form-group .wrapper .form-control {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}

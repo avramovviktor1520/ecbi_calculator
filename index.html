@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Energy consumption balance</title>
+    <link rel="stylesheet" href="./sources/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <body>
+    <main class="hero">
+      <!-- Navigation starts -->
+      <nav class="navigation">
+        <div class="navigation-title">
+          <img src="./sources/img/logo.png" alt="" />
+          <h3>Energy Consumption Calculator</h3>
+        </div>
+        <div class="navigation-wrapper">
+          <a href="#home">Home page</a>
+          <a href="#home">About us</a>
+          <a href="#home">ECBI Calculator</a>
+        </div>
+        <a href="" class="navigation-responsive-button">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </nav>
+      <!-- Navigation ends -->
+
+      <div class="hero-text">
+        <small>Save one unit a day</small>
+        <h1>
+          Find the energy consumption<br />
+          balance index
+        </h1>
+        <div class="hero-button">
+          <a class="btn" href="#">Calculate now</a>
+          <a class="btn btn-ghost" href="#">More about the project</a>
+        </div>
+      </div>
+    </main>
+
+    <section class="section-center" id="calculator">
+      <form class="form-calculator">
+        <div class="form-control">
+          <label>Select a country</label>
+          <select id="country">
+          </select>
+        </div>
+
+        <div class="form-group">
+          <h3>Energy resources information (kWh)</h3>
+          <div class="wrapper">
+            <div data-color="rgba(102, 51, 0, 1)" class="form-control form-data">
+              <label>Coal</label>
+              <input required type="number" />
+            </div>
+            <div data-color="rgba(128, 128, 128, 1)" class="form-control form-data">
+              <label>Oil</label>
+              <input required type="number" />
+            </div>
+            <div data-color="rgba(51, 153, 51, 1)" class="form-control form-data">
+              <label>Gas</label>
+              <input required type="number" />
+            </div>
+            <div data-color="rgba(153, 51, 153, 1)" class="form-control form-data">
+              <label>Nuclear</label>
+              <input required type="number" />
+            </div>
+            <div data-color="rgba(0, 102, 204, 1)" class="form-control form-data">
+              <label>Hydro-power</label>
+              <input required type="number" />
+            </div>
+            <div data-color="rgba(0, 153, 153, 1)" class="form-control form-data">
+              <label>Wind</label>
+              <input required type="number" />
+            </div>
+            <div data-color="rgba(240, 196, 45, 1)" class="form-control form-data">
+              <label>Solar</label>
+              <input required type="number" />
+            </div>
+            <div data-color="rgba(255, 153, 0, 1)" class="form-control form-data">
+              <label>Other renewables</label>
+              <input required type="number" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-control">
+          <label>Which method for ECBI calculation should be used?</label>
+          <div class="form-check">
+            <label>Nuclear and gas are conventional sources of energy</label>
+            <input type="radio" name="method" value="0">
+          </div>
+          <div class="form-check">
+            <label>Nuclear and gas are renewable sources of energy</label>
+            <input type="radio" name="method" value="1" checked>
+          </div>
+          </div>
+        </div>
+
+        <button class="btn" id="submit">Calculate</button>
+        <!-- <a id="submit" href="#" class="btn">Calculate</a> -->
+      </form>
+
+      <div class="calculator-result">
+        <div class="index">
+          <h3>Index</h3>
+          <div id="index">0</div>
+        </div>
+        <div class="chart">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <script defer type="module" src="./sources/scripts/script.js"></script>
+
+  </body>
+</html>
